@@ -1,0 +1,10 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+            {% if is_edit: %}
+                <h1>Edit Cafe</h1>
+            {% else: %}
+                <h1>New Cafe</h1>
+            {% endif %}
+            {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+{% endblock %}

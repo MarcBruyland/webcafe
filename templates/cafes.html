@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cafe&Wifi</title>
+</head>
+<body>
+    <h1>Welcome to the Cafe & Wifi</h1>
+    <a href="/add">Create</a>
+
+    <ol>
+        {% for cafe in cafes: %}
+            <li>
+                <h2>{{cafe.name}}</h2>
+                <br>{{cafe.location}}
+                <br>Wifi: {{cafe.has_wifi}}
+                <br>Toilet: {{cafe.has_toilet}}
+                <br>Sockets: {{cafe.has_sockets}}
+                <br>Can take calls: {{cafe.can_take_calls}}
+                <br>Coffee: {{cafe.coffee_price}}
+                <br>Seats: {{cafe.seats}}
+                <br><a href="{{cafe.map_url}}">map</a>
+                <br><img src="{{cafe.img_url}}" width="250" height="250">
+                <br><a href="/update/{{cafe.id}}">Update</a>
+                <a href="/delete/{{cafe.id}}">Delete</a>
+           </li>
+        {% endfor %}
+
+    </ol>
+</body>
+</html>
